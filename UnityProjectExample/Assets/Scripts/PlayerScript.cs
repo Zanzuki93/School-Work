@@ -63,6 +63,16 @@ public class PlayerScript : MonoBehaviour
 			Debug.Log ("Your Invincible Go WILD!!");
 			Destroy (player.collider.gameObject);
 		}
+		if (player.collider.tag == "Coin Purse") 
+		{
+			Sanity += 25;
+			if (Sanity >= 100) 
+			{
+				Sanity = 100;
+			}
+			Debug.Log ("You picked up a gold purse that you took because there were no consequences");
+			Destroy (player.collider.gameObject);
+		}
 		if (player.collider.tag == "Enemy") 
 		{
 			if (DefBoost == false) {
